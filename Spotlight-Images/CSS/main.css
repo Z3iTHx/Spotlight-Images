@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-color: #111;
+}
+
+@keyframes openUpUpper {
+    from {transform: translateY(0);}
+    to {transform: translateY(-100%);background-color: black;}
+}
+
+@keyframes openDownLower {
+    form {transform: translateY(100%);}
+    to {transform: translateY(200%);background-color: black;}
+    
+}
+
+@keyframes squareRoll {
+    0% {transform: rotate(0deg); background-color: goldenrod;}
+    50% {transform: rotate(360deg); background-color: gold;}
+    100% {transform: rotate(0deg) scale(0%); background-color: goldenrod;}
+}
+
+@keyframes letterBreathe {
+    0% {letter-spacing: normal;}
+    25% {letter-spacing: 5px;}
+    50% {letter-spacing: normal;}
+    75% {letter-spacing: 5px;}
+    100%{letter-spacing: normal;}
+}
+
+@keyframes disappear {
+    from {}
+    to {opacity: 0; display: none; pointer-events: none;}
+}
+
+.showup-box {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 100%;
+    animation: disappear 0.1s 3.5s;
+    animation-fill-mode: both;
+}
+
+.showup-box-upper {
+    position: absolute;
+    animation: 1.2s 2.3s openUpUpper ease-out;
+    animation-fill-mode: both;
+    width: 100%;
+    height: 50%;
+    background-color: #151515;
+}
+
+.showup-box-lower {
+    position: absolute;
+    animation: openDownLower 1.2s 2.3s ease-out;
+    animation-fill-mode: both;
+    transform: translateY(100%);
+    width: 100%;
+    height: 50%;
+    background-color: #111;
+}
+
+.showup-box-title {
+    font-size: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    transform: translateY(42%);
+    font-family: 'Nova Cut', cursive;
+    animation: 2s letterBreathe, disappear 0.6s 2s;
+    animation-fill-mode: both;
+
+}
+
+#square {
+    width: 50px;
+    height: 50px;
+    background-color:goldenrod;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: 55%;
+    animation: 3s squareRoll;
+    animation-fill-mode: both;
+}
+
+.image-box {
+    height: 750px;
+    width: 800px;
+    background-color: #161616;
+    margin: auto;
+    transform: translateY(100px);
+}
+
+.image-box-title {
+    letter-spacing: 2px;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.image-box-title-under {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.image-box-spotlight-frame {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    background-color: #222;
+    background-image: url(/GALLERY/estate.JPG);
+    background-position: center;
+    background-size: 100%;
+    transition: 0.25s ease-out;
+}
+
+.image-box-spotlight-frame-title {
+    transition: 0.2s;
+    font-size: 32px;
+    text-align: center;
+    transform: translateY(461px);
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px black;
+    color: white;
+    font-family: 'Nova Cut', cursive;
+}
+
+.image-box-button-holder {
+    width: 250px;
+    height: 50px;
+    margin: 10px auto;
+}
+
+.image-box-button {
+    transition: ease-in-out 0.25s;
+    width: 100px;
+    height: 100%;
+    background-color: transparent;
+    border: white solid 1px;
+    color: white;
+    font-size: 40px;
+}
+
+.image-box-button:hover {
+    background-color: white;
+    color: #161616;
+    border: none;
+}
+
+.image-box-button:active {
+    background-color: rgb(173, 173, 173);
+}
+
+#left-button {
+    float: left;
+}
+
+#right-button {
+    float: right;
+}
+
+.image-box-image-list {
+    width: 200px;
+    height: 40px;
+    margin: 10px auto;
+    display: flex;
+}
+
+#second {
+    margin: 0 10px;
+}
+
+.image-box-image-list-item {
+    transition: 0.2s ease-in-out;
+    width: 70px;
+    height: 15px;
+    border-radius: 25%;
+    background-color: #222;
+    color: grey;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.picked {
+    transition: 0.25s;
+    transform: scale(120%);
+    background-color: #333;
+}
+
+.image-box-image-list-item:hover {
+    background-color: #111;
+}
+
+footer {
+    background-color: black;
+    width: 100%;
+    height: 200px;
+    margin-top: 250px;
+    position: relative;
+}
+
+.footer-title {
+    color: #333;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+    font-family: 'Nova Cut', cursive;
+    letter-spacing: 20px;
+}
+
+.footer-text {
+    color: #333;
+    text-align: 18px;
+    text-align: center;
+    padding-top: 20px;
+}
